@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - GameControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>GameControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/ru.site.web.controller.html">ru.site.web.controller</a> &gt; GameControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">2.913s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testAddPlayerWithValidToken()</td>
+<td class="success">0.859s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testAuthAndAvailableEndpointWithValidToken()</td>
+<td class="success">0.729s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testAuthAndCompletedEndpointWithValidToken()</td>
+<td class="success">0.686s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testInitEndpointWithValidToken()</td>
+<td class="success">0.639s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2025-08-11T21:33:55.737+03:00  INFO 73035 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ru.site.web.controller.GameControllerTest]: GameControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-08-11T21:33:55.742+03:00  INFO 73035 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ru.site.GameApplication for test class ru.site.web.controller.GameControllerTest
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+Hibernate: insert into users (login,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+Hibernate: insert into users (login,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select gs1_0.uuid,gs1_0.current_player_id,gs1_0.created_at,gs1_0.field_store_id,gs1_0.game_type,gs1_0.playeroid,gs1_0.playerxid,gs1_0.status,gs1_0.winner_id from game_store gs1_0 where gs1_0.playerxid=?
+Hibernate: select gs1_0.uuid,gs1_0.current_player_id,gs1_0.created_at,gs1_0.field_store_id,gs1_0.game_type,gs1_0.playeroid,gs1_0.playerxid,gs1_0.status,gs1_0.winner_id from game_store gs1_0 where gs1_0.playeroid=?
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+Hibernate: insert into users (login,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+Hibernate: insert into users (login,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select gs1_0.uuid,gs1_0.current_player_id,gs1_0.created_at,gs1_0.field_store_id,gs1_0.game_type,gs1_0.playeroid,gs1_0.playerxid,gs1_0.status,gs1_0.winner_id from game_store gs1_0 where gs1_0.uuid is null
+Hibernate: insert into field (matrix,id) values (? format json,default)
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+Hibernate: insert into users (login,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+Hibernate: insert into users (login,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select gs1_0.uuid,gs1_0.current_player_id,gs1_0.created_at,gs1_0.field_store_id,gs1_0.game_type,gs1_0.playeroid,gs1_0.playerxid,gs1_0.status,gs1_0.winner_id from game_store gs1_0 where gs1_0.playerxid=?
+Hibernate: select gs1_0.uuid,gs1_0.current_player_id,gs1_0.created_at,gs1_0.field_store_id,gs1_0.game_type,gs1_0.playeroid,gs1_0.playerxid,gs1_0.status,gs1_0.winner_id from game_store gs1_0 where gs1_0.playeroid=?
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+Hibernate: insert into users (login,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+Hibernate: insert into users (login,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: select gs1_0.uuid,gs1_0.current_player_id,gs1_0.created_at,gs1_0.field_store_id,gs1_0.game_type,gs1_0.playeroid,gs1_0.playerxid,gs1_0.status,gs1_0.winner_id from game_store gs1_0 where gs1_0.uuid is null
+Hibernate: insert into field (matrix,id) values (? format json,default)
+Hibernate: select u1_0.id,u1_0.login,u1_0.password from users u1_0 where u1_0.login=?
+Hibernate: insert into game_store (current_player_id,created_at,field_store_id,game_type,playeroid,playerxid,status,winner_id,uuid) values (?,?,?,?,?,?,?,?,?)
+Hibernate: update field set matrix=? format json where id=?
+Hibernate: insert into users_roles (user_id,roles_id) values (?,?)
+Hibernate: insert into users_roles (user_id,roles_id) values (?,?)
+Hibernate: select gs1_0.uuid,gs1_0.current_player_id,gs1_0.created_at,gs1_0.field_store_id,gs1_0.game_type,gs1_0.playeroid,gs1_0.playerxid,gs1_0.status,gs1_0.winner_id from game_store gs1_0 where gs1_0.uuid=?
+Hibernate: select gs1_0.uuid,gs1_0.current_player_id,gs1_0.created_at,gs1_0.field_store_id,gs1_0.game_type,gs1_0.playeroid,gs1_0.playerxid,gs1_0.status,gs1_0.winner_id from game_store gs1_0 where gs1_0.uuid=?
+Hibernate: insert into field (matrix,id) values (? format json,default)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 8.13</a> at 11 авг. 2025 г., 21:33:58</p>
+</div>
+</div>
+</body>
+</html>

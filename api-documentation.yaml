@@ -1,0 +1,548 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "OpenAPI definition",
+        "version": "v0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8080",
+            "description": "Generated server url"
+        }
+    ],
+    "paths": {
+        "/update_refresh": {
+            "post": {
+                "tags": [
+                    "auth-controller"
+                ],
+                "operationId": "updateRefreshToken",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RefreshJwtRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JwtResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/update_access": {
+            "post": {
+                "tags": [
+                    "auth-controller"
+                ],
+                "operationId": "updateAccessToken",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RefreshJwtRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JwtResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/register": {
+            "post": {
+                "tags": [
+                    "auth-controller"
+                ],
+                "operationId": "register",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/JwtRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/init": {
+            "post": {
+                "tags": [
+                    "tic-tac-toe-controller"
+                ],
+                "operationId": "initGame",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateGameRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GameResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/game/{uuid}": {
+            "post": {
+                "tags": [
+                    "tic-tac-toe-controller"
+                ],
+                "operationId": "playMove",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GameWeb"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GameResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth": {
+            "post": {
+                "tags": [
+                    "auth-controller"
+                ],
+                "operationId": "auth",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/JwtRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JwtResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/leaders/{n}": {
+            "get": {
+                "tags": [
+                    "leaders-controller"
+                ],
+                "operationId": "leaders",
+                "parameters": [
+                    {
+                        "name": "n",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/info": {
+            "get": {
+                "tags": [
+                    "tic-tac-toe-controller"
+                ],
+                "operationId": "userInfo",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/current_game": {
+            "get": {
+                "tags": [
+                    "tic-tac-toe-controller"
+                ],
+                "operationId": "currentGame",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/completed/{playerId}": {
+            "get": {
+                "tags": [
+                    "tic-tac-toe-controller"
+                ],
+                "operationId": "completed",
+                "parameters": [
+                    {
+                        "name": "playerId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/available": {
+            "get": {
+                "tags": [
+                    "tic-tac-toe-controller"
+                ],
+                "operationId": "gameList",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Game"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/add/{gameId}": {
+            "get": {
+                "tags": [
+                    "tic-tac-toe-controller"
+                ],
+                "operationId": "gameAdd",
+                "parameters": [
+                    {
+                        "name": "gameId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "RefreshJwtRequest": {
+                "type": "object",
+                "properties": {
+                    "refreshToken": {
+                        "type": "string"
+                    }
+                }
+            },
+            "JwtResponse": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "accessToken": {
+                        "type": "string"
+                    },
+                    "refreshToken": {
+                        "type": "string"
+                    }
+                }
+            },
+            "JwtRequest": {
+                "type": "object",
+                "properties": {
+                    "login": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CreateGameRequest": {
+                "type": "object",
+                "properties": {
+                    "gameType": {
+                        "type": "string"
+                    },
+                    "playerSign": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GameResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "field": {
+                        "type": "array",
+                        "items": {
+                            "type": "array",
+                            "items": {
+                                "type": "integer",
+                                "format": "int32"
+                            }
+                        }
+                    },
+                    "gameStatus": {
+                        "type": "string",
+                        "enum": [
+                            "WAITING",
+                            "IN_PROGRESS",
+                            "WINNING",
+                            "DRAW"
+                        ]
+                    },
+                    "currentPlayerId": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }
+            },
+            "GameWeb": {
+                "type": "object",
+                "properties": {
+                    "row": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "col": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }
+            },
+            "Field": {
+                "type": "object",
+                "properties": {
+                    "field": {
+                        "type": "array",
+                        "items": {
+                            "type": "array",
+                            "items": {
+                                "type": "integer",
+                                "format": "int32"
+                            }
+                        }
+                    }
+                }
+            },
+            "Game": {
+                "type": "object",
+                "properties": {
+                    "field": {
+                        "$ref": "#/components/schemas/Field"
+                    },
+                    "uuid": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "WAITING",
+                            "IN_PROGRESS",
+                            "WINNING",
+                            "DRAW"
+                        ]
+                    },
+                    "gameType": {
+                        "type": "string",
+                        "enum": [
+                            "HVS_H",
+                            "HVS_C"
+                        ]
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "playerXId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "playerOId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "currentPlayerId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "winnerId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "playerSign": {
+                        "type": "string"
+                    },
+                    "lastMoveRow": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "lastMoveCol": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "eventDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "currentPlayerValue": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "opponentPlayerId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "otherPlayerId": {
+                        "type": "integer",
+                        "format": "int64",
+                        "writeOnly": true
+                    }
+                }
+            }
+        }
+    }
+}
