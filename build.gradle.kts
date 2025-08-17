@@ -35,7 +35,6 @@ dependencies {
 	testImplementation("org.springframework.security:spring-security-test")
 	testImplementation("com.jayway.jsonpath:json-path:2.9.0")
 	testImplementation("com.h2database:h2")
-	
 
 }
 
