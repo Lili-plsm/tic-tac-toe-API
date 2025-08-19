@@ -20,6 +20,7 @@
 *.rar
 
 !gradle/wrapper/gradle-wrapper.jar
+application.properties
 
 .idea/
 *.iml
