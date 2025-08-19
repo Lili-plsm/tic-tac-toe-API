@@ -18,8 +18,7 @@ public class JwtProvider {
     private final long expirationTimeRefresh;
 
     public JwtProvider(JwtSettings jwtSettings) {
-        this.key = Keys.hmacShaKeyFor(
-            Decoders.BASE64.decode(jwtSettings.getSecretKey()));
+        this.key = Keys.hmacShaKeyFor("ThisIsAVerySecretKeyAtLeast32Chars!".getBytes());
         this.expirationTimeAccess = jwtSettings.getExpirationTimeAccess();
         this.expirationTimeRefresh = jwtSettings.getExpirationTimeRefresh();
     }
